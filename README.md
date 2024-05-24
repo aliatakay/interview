@@ -1,6 +1,6 @@
-# OOP Soruları
+# Object-Oriented Programlama Soruları
 
-OOP'nin 4 temel özelliği vardır.
+Object-Oriented Programlama'nın 4 temel özelliği vardır.
 
 ## 1) Encapsulation
 
@@ -29,29 +29,29 @@ Burada encapsulation uygulamamız gerekiyorsa, kediye ait tüm logic, Cat isimli
 ```c#
 public class Cat
 {
-  private int mood;
-	private int hungry;
-	private int energy;
+     private int mood;
+     private int hungry;
+     private int energy;
 	
-  private void Meow()
-	{
-  	Console.Write("Meow");
-	}
+     private void Meow()
+     {
+          Console.Write("Meow");
+     }
   
-  public void Feed()
-	{
-  	hungry--;
-    mood++;
-    Meow();
-	}
+     public void Feed()
+     {
+          hungry--;
+          mood++;
+          Meow();
+     }
 }
 ```
 
-Dışarıdan hiçbir class, Cat classındaki private field'lara erişemez.
+Dışarıdan hiçbir class, Cat class'ındaki private field'lara erişemez.
 
 Diğer classlar sadece Cat classında public olarak tanımlanmış Feed metoduna erişebilir.
 
-Bu şekilde, Feed metodunu çağırarak, Cat classındaki private field ve metotlara erişim sağlanmış olur.
+Bu şekilde, Feed metodunu çağırarak, Cat class'ındaki private field ve metotlara erişim sağlanmış olur.
 
 Ancak bu erişim, sadece Cat sınıfındaki public metotların izin verdiği kadardır.
 
@@ -64,58 +64,52 @@ Property'ler sayesinde private olan field'ın get ve set metotlarını yönetiri
 ```c#
 public class Person
 {
-  	private string name;
-  	public string Name
-    {
-      	get
-        {
-          	return name;
-        }
-      	set
-        {
-          	name = value;
-        }
-    }
+     private string name;
+     public string Name
+     {
+          get
+          {
+               return name;
+          }
+      	  set
+          {
+               name = value;
+          }
+     }
 }
 ```
 
 Özetle Encapsulation; bir class'ta bulunan field veya metotları diğer class'lara gizlemektir. Bu, yanlış kullanımları ve atamaları engellemek içindir. Diğer class'lar, private olan bu field'lara erişmek için public olan metotları kullanmak zorundadır. Doğrudan field'lar için oluşturulan property'ler üzerinden erişebilirler. Ya da class'ta bulunan başka public bir metot aracılığıyla erişebilirler.
 
-
-
-Abstraction dışarıdan bakan içindir demiştik. Encapsulation ise tam tersi. Encapsulation, motor üreticilerinin onu kaporta ve motor kapakları ile koruma içgüdüsüdür. Encapsulation evlerimizde ki kapı ve perdelerdir. Encapsulation beynimizi çevreleyen kafatasıdır. Encapsulation, sınıfımızı başkalarının yanlış kullanımlarımdan korumak için kontrolsüz değişime kapamaktır.
-
-
-
 ```c#
 public class AccountCreator
 {
-  	public int Age;
-  	private string _country;
+     public int Age;
+     private string _country;
   
-  	public void CreateAccount(Account account)
-  	{
-    		this.Age = account.Age;
-    		this._country = account.Country;
-    		var accountEligible = CheckAge();
-  	} 
+     public void CreateAccount(Account account)
+     {
+          this.Age = account.Age;
+          this._country = account.Country;
+          var accountEligible = CheckAge();
+     } 
   
-  	private bool CheckAge()
-  	{
-    		if(_country == "USA")
-    		{
-      			this.Age++;
-      			return this.Age > 18;
-    		}
-  	}
+     private bool CheckAge()
+     {
+          if(_country == "USA")
+          {
+               this.Age++;
+               return this.Age > 18;
+          }
+     }
 }
 
 static void Main(string[] args)
 {
-  	var accountCreator = new AccountCreator();
-  	var account = getAccountFromAzure();
-  	accountCreator.CreateAccount(account);
-  	accountCreator.Age = 16; // erişilebiliyor olması hatadır.
+     var accountCreator = new AccountCreator();
+     var account = getAccountFromAzure();
+     accountCreator.CreateAccount(account);
+     accountCreator.Age = 16; //Erişilebiliyor olması hatadır.
 }
 ```
 
