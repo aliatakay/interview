@@ -143,7 +143,7 @@ Abstraction, bireysel olarak farklı olan yapıları, ortak olan bazı taraflar�
 
 Mesela **Türkler** dediğimizde, birbirinden çok farklı olan milyonlarca insanı, ortak bir çatıda toplamış oluruz. Bu isimlendirme ile abstraction uygulamış oluruz.
 
-Mesela araba kullanırken sadece pedalları, vitesi ve direksiyonu kullanırız. Halbuki bu 3 parçanın var olmasını sağlayan binlerce başka parça mevcuttur arabada. Fakat onların hiçbirini bilmeyiz.
+Mesela araba kullanırken sadece pedalları, vitesi ve direksiyonu kullanırız. Halbuki arabada, bu 3 parçanın var olmasını sağlayan binlerce başka parça mevcuttur. Fakat onların hiçbirini bilmeyiz.
 
 Şimdi yazılımdaki abstraction'ın ne olduğuna bakalım.
 
@@ -153,27 +153,27 @@ string text = "hello";
 
 Aslında yukarıdaki tek satır kodda 'interface', 'abstract class' ya da 'inheritance' yok. Fakat aslında abstraction vardır.
 
-**string** bir soyutlamadır. metinsel ifadeleri tutan yapıdır. bellekte ne kadar yer ayrılacağını, nasıl tutulacağını, operatörlere nasıl tepki vereceğini vs. her şeyi bellidir. Bütün bunları 'string' kelimesi ile soyutlamıştır.
+**string** bir soyutlamadır. Metinsel ifadeleri tutan yapıdır. Bellekte ne kadar yer ayrılacağını, nasıl tutulacağını, operatörlere nasıl tepki vereceğini vs. her şeyi bellidir. Bütün bunları 'string' kelimesi ile soyutlamıştır.
 
 **=** işareti bir soyutlamadır. Verinin atanması için gereken tüm adımları soyutlar.
 
 **"hello"** bile soyutlamadır. Arka planda oluşma, saklanma ve 010101 verilerini soyutlar.
 
-Bunları yaparken, hitap ettiğiniz asıl kitle, bu sınıfları kullanacak olan diğer insanlar. Arabalardaki gaz ve fren gibi kısımlar ile soyutlanan binlerce parça, arabayı nasıl daha kolay kullanılabilir hale getirdiyse, yazılımda da abstraction benzer etkiyi hem sizin için hem de sınıflarınızı kullanacak diğer mühendisler için yapar. Eğer mühendisler, arabanın nasıl çalıştığını bildiklerinden dolayı, onları üretirken herkesi kendileri gibi düşünüyor olsalardı, o zaman araba süren insan sayısı şimdikinin sizce kaçta kaçı kadar olurdu? Benzer şekilde, eğer yazılımda, abstraction çok gelişmiş bir konsept olmasaydı, şu an çoğumuzun 010101 diye kod yazıyor olurduk.
+Bunları yaparken, hitap ettiğiniz asıl kitle, bu sınıfları kullanacak olan diğer insanlar. Arabalardaki gaz ve fren gibi kısımlar ile soyutlanan binlerce parça, arabayı nasıl daha kolay kullanılabilir hale getirdiyse, yazılımda da abstraction benzer etkiyi hem sizin için hem de sınıflarınızı kullanacak diğer mühendisler için yapar. Eğer mühendisler, arabanın nasıl çalıştığını bildiklerinden dolayı, onları üretirken herkesi kendileri gibi düşünüyor olsalardı, o zaman araba süren insan sayısı şimdikinin sizce kaçta kaçı kadar olurdu? Benzer şekilde, eğer yazılımda, abstraction çok gelişmiş bir konsept olmasaydı, şu an çoğumuz 010101 diye kod yazıyor olurduk.
 
 ```c#
 class Animal
 {
-  	public int Length {set;get;}
-  	public string Gender {get;set;}
+     public int Length { get; set; }
+     public string Gender { get; set; }
 }
 class Dog : Animal
 {
-  	public int TailLength {get;set;}
+     public int TailLength { get; set; }
 }
 class Dolphin : Animal
 {
-  	public string SpeedInWater {get;set;}
+     public string SpeedInWater { get; set; }
 }
 ```
 
@@ -205,11 +205,11 @@ Aynı zamanda kendine has metot ve özellikleri de implemente edebilir.
 
 
 
-Örneğin parent bir PERSON classı olur.
+Örneğin parent bir PERSON class'ı olur.
 
 Teacher ve Student classları, Person classından türetilir.
 
-PERSON classındaki 'name' ve 'email' fieldlarına, tüm çocuk sınıflar da sahip olmuş olur.
+PERSON classındaki 'Name' ve 'Email' fieldlarına, tüm çocuk sınıflar da sahip olmuş olur.
 
 Ayrıca TEACHER classından da PrivateTeacher ve PublicTeacher gibi farklı çocuk sınıflar türetebiliriz.
 
@@ -274,11 +274,11 @@ p.Read(); // dediğimiz zaman aslında STUDENT'a ait READ metodu çalışır.
 
 ---
 
-### Object-Oriented Programming nedir?
+### Object-Oriented Programlama nedir?
 
 ---
 
-### OOP Diller Hangileridir?
+### Object-Oriented Diller Hangileridir?
 
 Java
 
@@ -311,17 +311,17 @@ A sınıfının, B sınıfının metotlarını kullanmak istediğini düşüneli
 ```c#
 public class Customer
 {
-  	private MobileDeveloper developer;
+     private MobileDeveloper developer;
   	
-  	public Customer()
-    {
-      	developer = new MobileDeveloper();
-    }
+     public Customer()
+     {
+          developer = new MobileDeveloper();
+     }
   
-  	public void CreateApp()
-    {
-      	developer.MakeAnApplication();
-    }
+     public void CreateApp()
+     {
+          developer.MakeAnApplication();
+     }
 }
 ```
 
@@ -336,17 +336,17 @@ Bu durumu gidermek için, Customer sınıfını, MobileDeveloper nesnesini new'l
 ```c#
 public class Customer
 {
-  	private MobileDeveloper developer;
+     private MobileDeveloper developer;
   	
-  	public Customer(MobileDeveloper developer)
-    {
-      	this.developer = developer;
-    }
+     public Customer(MobileDeveloper developer)
+     {
+          this.developer = developer;
+     }
   
-  	public void CreateApp()
-    {
-      	developer.MakeAnApplication();
-    }
+     public void CreateApp()
+     {
+          developer.MakeAnApplication();
+     }
 }
 ```
 
@@ -355,9 +355,9 @@ Artık Customer nesnesini kullanarak, yeni bir Application üreten metodu çalı
 ```c#
 public static void Main(string[] args)
 {
-  	MobileDeveloper developer = new MobileDeveloper();
-  	Customer customer = new Customer(developer);
-  	customer.CreateApp();
+     MobileDeveloper developer = new MobileDeveloper();
+     Customer customer = new Customer(developer);
+     customer.CreateApp();
 }
 ```
 
@@ -372,7 +372,7 @@ Bu durumu çözmek için IDeveloper adında bir interface oluşturmamız gerekir
 ````c#
 public interface IDeveloper
 {
-  	void MakeAnApplication();
+     void MakeAnApplication();
 }
 ````
 
@@ -383,24 +383,24 @@ public interface IDeveloper
 ````c#
 public class MobileDeveloper : IDeveloper
 {
-  	public MobileDeveloper() {}
+     public MobileDeveloper() {}
   
-  	public void MakeAnApplication()
-    {
-      	// Mobil uygulama üreten kodlar.
-    }
+     public void MakeAnApplication()
+     {
+          //Mobil uygulama üreten kodlar.
+     }
 }
 ````
 
 ````c#
 public class WebDeveloper : IDeveloper
 {
-  	public WebDeveloper() {}
+     public WebDeveloper() {}
   
-  	public void MakeAnApplication()
-    {
-      	// Web uygulama üreten kodlar.
-    }
+     public void MakeAnApplication()
+     {
+          // Web uygulama üreten kodlar.
+     }
 }
 ````
 
@@ -411,17 +411,17 @@ Artık Customer sınıfındaki somut bağımlılığı düzelterek, interface ü
 ````c#
 public class Customer
 {
-  	private IDeveloper developer;
+     private IDeveloper developer;
   	
-  	public Customer(IDeveloper developer)
-    {
-      	this.developer = developer;
-    }
+     public Customer(IDeveloper developer)
+     {
+          this.developer = developer;
+     }
   
-  	public void CreateApp()
-    {
-      	developer.MakeAnApplication();
-    }
+     public void CreateApp()
+     {
+          developer.MakeAnApplication();
+     }
 }
 ````
 
@@ -432,10 +432,10 @@ public class Customer
 ```c#
 public static void Main(string[] args)
 {
-  	IDeveloper developer = new MobileDeveloper();
- // IDeveloper developer = new WebDeveloper();
-  	Customer customer = new Customer(developer);
-  	customer.CreateApp();
+     IDeveloper developer = new MobileDeveloper();
+     //IDeveloper developer = new WebDeveloper();
+     Customer customer = new Customer(developer);
+     customer.CreateApp();
 }
 ```
 
