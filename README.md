@@ -1362,12 +1362,36 @@ int number = (int)obj;
 
 ### Struct ve Class farkları nelerdir?
 
-- Struct bir değer tiptir. Class bir referans tiptir.
-- Struct az sayıda data için kullanılır. Class çok sayıda data için kullanılır.
-- Struct inherit edilemez. Class, diğer classlar tarafından inherit edilebilir.
-- Struct abstract olamaz. Class abstract olabilir.
-- Struct, Nesne türetirken new keyword kullanılmaz.  Class, Nesne türetirken new keyword kullanılır.
-- Struct, default constructor oluşturulamaz. Class, default constructor oluşturulabilir.
+<table>
+	<tr>
+		<th>Struct</th>
+		<th>Class</th>
+	</tr>
+	<tr>
+		<td>Struct bir değer tiptir.</td>
+		<td>Class bir referans tiptir.</td>
+	</tr>
+	<tr>
+		<td>Struct az sayıda data için kullanılır.</td>
+		<td>Class çok sayıda data için kullanılır.</td>
+	</tr>
+	<tr>
+		<td>Struct inherit edilemez.</td>
+		<td>Class, diğer classlar tarafından inherit edilebilir.</td>
+	</tr>
+	<tr>
+		<td>Struct abstract olamaz.</td>
+		<td>Class abstract olabilir.</td>
+	</tr>
+	<tr>
+		<td>Struct, Nesne türetirken new keyword kullanılmaz.</td>
+		<td>Class, Nesne türetirken new keyword kullanılır.</td>
+	</tr>
+	<tr>
+		<td>Struct, default constructor oluşturulamaz.</td>
+		<td>Class, default constructor oluşturulabilir.</td>
+	</tr>
+</table>
 
 ---
 
