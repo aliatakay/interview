@@ -2,7 +2,8 @@
 
 Object-Oriented Programlama'nın 4 temel özelliği vardır.
 
-## 1) Encapsulation
+<details>
+<summary><h2>Encapsulation</h2></summary>
 
 Birbiriyle iletişim kuran, farklı nesnelerin olduğu bir program düşünelim.
 
@@ -119,7 +120,10 @@ Burada Age field'ına müdahale edebildik. Bu tamamen anlamsızdır ve çok risk
 
 ---
 
-## 2) Abstraction
+</details>
+
+<details>
+<summary><h2>Abstraction</h2></summary>
 
 Abstraction, Encapsulation prensibinin doğal bir uzantısı olarak görülebilir.
 
@@ -183,7 +187,10 @@ class Dolphin : Animal
 
 ---
 
-## 3) Inheritance
+</details>
+
+<details>
+<summary><h2>Inheritance</h2></summary>
 
 Nesneler sıklıkla birbirine benzer.
 
@@ -221,7 +228,10 @@ Ve her sınıf, kendine has ek logicleri de kendine ekleyebilir.
 
 ---
 
-## 4) Polymorphism
+</details>
+
+<details>
+<summary><h2>Polymorphism</h2></summary>
 
 En karmaşık prensiptir.
 
@@ -270,9 +280,9 @@ p.Read();
 p.Read(); // dediğimiz zaman aslında STUDENT'a ait READ metodu çalışır.
 ```
 
-
-
 ---
+
+</details>
 
 ### Object-Oriented Programlama nedir?
 
