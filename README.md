@@ -49,7 +49,7 @@ public class Cat
 
 Dışarıdan hiçbir class, Cat class'ındaki private field'lara erişemez.
 
-Diğer classlar sadece Cat classında public olarak tanımlanmış Feed metoduna erişebilir.
+Diğer classlar sadece Cat class'ında public olarak tanımlanmış Feed metoduna erişebilir.
 
 Bu şekilde, Feed metodunu çağırarak, Cat class'ındaki private field ve metotlara erişim sağlanmış olur.
 
@@ -115,7 +115,7 @@ static void Main(string[] args)
 
 
 
-Burada age field'ına müdahale edebildik. Bu tamamen anlamsızdır ve çok risklidir. Age field'ımız private olmalıydı. Çünkü AccountCreator sınıfında yer alan Age field'ı dışarıdan sadece sınıf içindeki public metot olan CreateAccount metodu kullanılarak manipüle edilebilir. Başka türlü edilememesi gerekmektedir. O yüzden private bir field olmalıydı.
+Burada Age field'ına müdahale edebildik. Bu tamamen anlamsızdır ve çok risklidir. Age field'ımız private olmalıydı. Çünkü AccountCreator sınıfında yer alan Age field'ı dışarıdan sadece sınıf içindeki public metot olan CreateAccount metodu kullanılarak manipüle edilebilir. Başka türlü edilememesi gerekmektedir. O yüzden private bir field olmalıydı.
 
 ---
 
@@ -123,7 +123,7 @@ Burada age field'ına müdahale edebildik. Bu tamamen anlamsızdır ve çok risk
 
 Abstraction, Encapsulation prensibinin doğal bir uzantısı olarak görülebilir.
 
-OOP tasarımda programlar büyük ölçekli olur.
+OOP tasarımda, programlar büyük ölçekli olur.
 
 Nesneler birbiriyle fazlaca haberleşirler.
 
@@ -153,11 +153,11 @@ string text = "hello";
 
 Aslında yukarıdaki tek satır kodda 'interface', 'abstract class' ya da 'inheritance' yok. Fakat aslında abstraction vardır.
 
-**string** bir soyutlamadır. Metinsel ifadeleri tutan yapıdır. Bellekte ne kadar yer ayrılacağını, nasıl tutulacağını, operatörlere nasıl tepki vereceğini vs. her şeyi bellidir. Bütün bunları 'string' kelimesi ile soyutlamıştır.
+**string** bir soyutlamadır. Metinsel ifadeleri tutan yapıdır. Bellekte ne kadar yer ayrılacağı, nasıl tutulacağı, operatörlere nasıl tepki vereceği vs. her şeyi bellidir. Bütün bunları 'string' kelimesi ile soyutlamıştır.
 
-**=** işareti bir soyutlamadır. Verinin atanması için gereken tüm adımları soyutlar.
+**=** işareti de bir soyutlamadır. Verinin atanması için gereken tüm adımları soyutlar.
 
-**"hello"** bile soyutlamadır. Arka planda oluşma, saklanma ve 010101 verilerini soyutlar.
+**"hello"** bile bir soyutlamadır. Arka planda oluşma, saklanma ve 010101 verilerini soyutlar.
 
 Bunları yaparken, hitap ettiğiniz asıl kitle, bu sınıfları kullanacak olan diğer insanlar. Arabalardaki gaz ve fren gibi kısımlar ile soyutlanan binlerce parça, arabayı nasıl daha kolay kullanılabilir hale getirdiyse, yazılımda da abstraction benzer etkiyi hem sizin için hem de sınıflarınızı kullanacak diğer mühendisler için yapar. Eğer mühendisler, arabanın nasıl çalıştığını bildiklerinden dolayı, onları üretirken herkesi kendileri gibi düşünüyor olsalardı, o zaman araba süren insan sayısı şimdikinin sizce kaçta kaçı kadar olurdu? Benzer şekilde, eğer yazılımda, abstraction çok gelişmiş bir konsept olmasaydı, şu an çoğumuz 010101 diye kod yazıyor olurduk.
 
@@ -179,7 +179,7 @@ class Dolphin : Animal
 
 
 
-**Özetlemek gerekirse**: Farklı kod parçalarının kompleks kısımlarını, sahip oldukları ortak davranışlar, amaçlar, karakteristik özellikler arkasında saklamak sayesinde daha anlaşılır ve kolay kullanılabilir kod yazmaktır abstraction.
+**Özetlemek gerekirse**: Abstraction, farklı kod parçalarının kompleks kısımlarını; sahip oldukları ortak davranışlar, amaçlar, karakteristik özellikler arkasında saklamak sayesinde daha anlaşılır ve kolay kullanılabilir kod yazmaktır.
 
 ---
 
@@ -191,7 +191,7 @@ Ortak bir logic paylaşırlar.
 
 Ancak yüzde yüz aynı değildirler.
 
-O halde ortak gözüken mantığı aynı tutup, farklılaşan kısımları nasıl ayrı sınıflara taşımalıyız.
+O halde ortak gözüken mantığı aynı tutup, farklılaşan kısımları ayrı sınıflara taşımalıyız.
 
 Bunu da inheritance ile yaparız.
 
@@ -207,9 +207,9 @@ Aynı zamanda kendine has metot ve özellikleri de implemente edebilir.
 
 Örneğin parent bir PERSON class'ı olur.
 
-Teacher ve Student classları, Person classından türetilir.
+Teacher ve Student class'ları, Person class'ından türetilir.
 
-PERSON classındaki 'Name' ve 'Email' fieldlarına, tüm çocuk sınıflar da sahip olmuş olur.
+PERSON class'ındaki 'Name' ve 'Email' fieldlarına, tüm çocuk sınıflar da sahip olmuş olur.
 
 Ayrıca TEACHER classından da PrivateTeacher ve PublicTeacher gibi farklı çocuk sınıflar türetebiliriz.
 
