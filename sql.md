@@ -22,14 +22,11 @@
 ```sql
 SELECT * FROM Customers
 
-UPDATE Customers
-SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
-WHERE CustomerID = 1;
+UPDATE Customers SET Name = 'Ali' WHERE Id = 1;
 
-DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+DELETE FROM Customers WHERE Id = 1;
 
-INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
-VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+INSERT INTO Customers (Id, Name, City) VALUES (1, 'Ali', 'Istanbul');
 ```
 
 
