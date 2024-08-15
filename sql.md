@@ -44,15 +44,33 @@ INSERT INTO Customers (Id, Name, City) VALUES (1, 'Ali', 'Istanbul');
 SELECT * FROM Customers
 ```
 
-**SELECT** 	      : Tablodan satırları seçer.
-*****				       : Tüm satırları seç demektir.
-**FROM** 			 : Hangi tablodan seçmek istediğimizi belirtmek için kullanırız.
-**CUSTOMERS**  : Seçtiğimiz tablonun adıdır.
+<table>
+  <tr>
+    <th>Komut</th>
+    <th>Anlam</th>
+  </tr>
+  <tr>
+    <td>SELECT</td>
+    <td>Tablodan satırları seçer.</td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td>Tüm kolonları seçer.</td>
+  </tr>
+  <tr>
+    <td>FROM</td>
+    <td>Hangi tablodan seçileceğini ifade eder.</td>
+  </tr>
+  <tr>
+    <td>Customers</td>
+    <td>Seçtiğimiz tablonun adıdır.</td>
+  </tr>
+</table>
 
 
 
 ```sql
-SELECT ContactName, CompanyName, City FROM Customers
+SELECT Id, Name, City FROM Customers
 ```
 
 - Sadece belirttiğimiz sütunların gelmesini istediğimiz için sütun isimlerini belirttik.
@@ -61,7 +79,7 @@ SELECT ContactName, CompanyName, City FROM Customers
 
 
 ```sql
-SELECT * FROM Customers WHERE City = ‘London’
+SELECT * FROM Customers WHERE City = 'London'
 ```
 
 **WHERE**			: Sorguya bir KOŞUL eklememizi sağlar.
@@ -91,12 +109,12 @@ Select * from Products where CategoryId = 1 and UnitPrice >= 10
 
 
 ```sql
-Select * from Products where CategoryId = 1
-Select * from Products where UnitPrice > 10
-Select * from Products where UnitPrice < 20
-Select * from Products where UnitPrice >= 10
-Select * from Products where UnitPrice <= 10
-Select * from Products where UnitPrice <> 10 -- 10'dan farklı olanları getir.
+SELECT * FROM Products WHERE CategoryId = 1
+SELECT * FROM Products WHERE UnitPrice > 10
+SELECT * FROM Products WHERE UnitPrice < 20
+SELECT * FROM Products WHERE UnitPrice >= 10
+SELECT * FROM Products WHERE UnitPrice <= 10
+SELECT * FROM Products WHERE UnitPrice <> 10 -- 10'dan farklı olanları getir.
 ```
 
 ---
