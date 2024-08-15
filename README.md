@@ -484,12 +484,12 @@ Bu sistem uygulandığında, sınıftan bir instance oluştururken mutlaka param
 ````c#
 public class PayrollSystem
 {
-  	private BankingService _bankingService;
+     private BankingService _bankingService;
   
-  	public PayrollSystem(BankingService bankingService)
-    {
-      	_bankingSystem = bankingSystem;
-    }      
+     public PayrollSystem(BankingService bankingService)
+     {
+          _bankingSystem = bankingSystem;
+     }      
 }
 ````
 
@@ -502,16 +502,16 @@ Aslında burada bir açık vardır. BankingService parametresini zorunlu tutmam�
 ````c#
 public class PayrollSystem
 {
-  	private BankingService _bankingService;
+     private BankingService _bankingService;
   
-  	public PayrollSystem(BankingService bankingService)
-    {
-      	if(bankingService == null)
-        {
-          	throw new ArgumentNullException();
-        }
-      	_bankingSystem = bankingSystem;
-    }      
+     public PayrollSystem(BankingService bankingService)
+     {
+          if(bankingService == null)
+          {
+               throw new ArgumentNullException();
+          }
+      	  _bankingSystem = bankingSystem;
+     }      
 }
 ````
 
@@ -566,7 +566,7 @@ Default implementasyon çoğunlukla fonksiyonsuz bir implementasyon olur. Ama b�
 ````c#
 public interface IGrammarChecker
 {
-  	void CheckGrammar();
+     void CheckGrammar();
 }
 ````
 
@@ -580,20 +580,20 @@ public interface IGrammarChecker
 ```c#
 public class DefaultGrammarChecker : IGrammarChecker
 {
-  	public void CheckGrammar()
-    {
-      	Console.Write("Do nothing");
-    }
+     public void CheckGrammar()
+     {
+          Console.Write("Do nothing");
+     }
 }
 ```
 
 ```c#
 public class RealGrammarChecker : IGrammarChecker
 {
-  	public void CheckGrammar()
-    {
-      	Console.Write("Grammar has been checked.");
-    }
+     public void CheckGrammar()
+     {
+          Console.Write("Grammar has been checked.");
+     }
 }
 ```
 
@@ -604,32 +604,32 @@ public class RealGrammarChecker : IGrammarChecker
 ```c#
 public class Document
 {
-  	private string _text;
-  	// property
-  	private IGrammarChecker _grammarChecker;
-  	public IGrammarChecker grammarChecker
-    {
-      	set
-        {
-          	if(value != null)
-            {
-              	_grammarChecker = value;
-            }
-        }
-    }
+     private string _text;
+     // property
+     private IGrammarChecker _grammarChecker;
+     public IGrammarChecker grammarChecker
+     {
+          set
+          {
+               if(value != null)
+               {
+                    _grammarChecker = value;
+               }
+          }
+     }
   
   
-  	// ctor
-  	public Document(string text)
-    {
-      	_text = text;
-      	_grammarChecker = new DefaultGrammarChecker();
-    }
+     // ctor
+     public Document(string text)
+     {
+          _text = text;
+          _grammarChecker = new DefaultGrammarChecker();
+     }
       
-  	public void CheckGrammar()
-    {
-      	_grammarChecker.CheckGrammar();
-    }
+     public void CheckGrammar()
+     {
+          _grammarChecker.CheckGrammar();
+     }
 }
 ```
 
@@ -644,12 +644,12 @@ Kullanıcı bunu istemiyorsa, istediği herhangi bir gerçek grammar checker ins
 ```c#
 public static void Main(string[] args)
 {
-  	string text = "Bu örnek bir metindir.";
-  	Document document = new Document(text);
-  	document.CheckGrammar(); // Do nothing.
+     string text = "Bu örnek bir metindir.";
+     Document document = new Document(text);
+     document.CheckGrammar(); // Do nothing.
   	
-  	document.grammarChecker = new RealGrammarChecker();
-  	document.CheckGrammar(); // Grammar has been checked.
+     document.grammarChecker = new RealGrammarChecker();
+     document.CheckGrammar(); // Grammar has been checked.
 }
 ```
 
@@ -684,54 +684,54 @@ Method injection, tam da kullanım esnasında hangi bağımlılığı implement 
 ```c#
 public interface IFoodPreparer
 {
-  	void PrepareFood(Recipe recipe);
+     void PrepareFood(Recipe recipe);
 }
 ```
 
 ```c#
 public class Baker : IFoodPreparer
 {
-  	public voic PrepareFood(Recipe recipe)
-    {
-      	Console.Write("Use baking skills to do " + recipe.Text);
-    }
+     public voic PrepareFood(Recipe recipe)
+     {
+          Console.Write("Use baking skills to do " + recipe.Text);
+     }
 }
 ```
 
 ```c#
 public class FastOrderCook : IFoodPreparer
 {
-  	public voic PrepareFood(Recipe recipe)
-    {
-      	Console.Write("Use fast skills to do " + recipe.Text);
-    }
+     public voic PrepareFood(Recipe recipe)
+     {
+          Console.Write("Use fast skills to do " + recipe.Text);
+     }
 }
 ```
 
 ```c#
 public class Chef : IFoodPreparer
 {
-  	public voic PrepareFood(Recipe recipe)
-    {
-      	Console.Write("Use chef skills to do " + recipe.Text);
-    }
+     public voic PrepareFood(Recipe recipe)
+     {
+          Console.Write("Use chef skills to do " + recipe.Text);
+     }
 }
 ```
 
 ```c#
 public class Restaurant
 {
-  	public string Name { get; set;}
+     public string Name { get; set;}
   	
-  	public Restaurant(string name)
-    {
-      	Name = name;
-    }
+     public Restaurant(string name)
+     {
+          Name = name;
+     }
   
-  	public void MakeFood(Recipe recipe, IFoodPreparer foodPreparer)
-    {
-      	foodPreparer.PrepareFood(recipe);
-    }
+     public void MakeFood(Recipe recipe, IFoodPreparer foodPreparer)
+     {
+          foodPreparer.PrepareFood(recipe);
+     }
 }
 ```
 
@@ -840,7 +840,7 @@ Onun yerine **Interface** veya **Abstract Class** kullanmalıyız.
 ```c#
 interface IinvoicePersistence 
 {
-    void Save(Invoice invoice);
+     void Save(Invoice invoice);
 }
 ```
 
@@ -849,18 +849,18 @@ Bu şekilde bir Interface oluştururuz. Ve log işlemi yapacak olan sınıflara 
 ```c#
 public class DatabasePersistence : IinvoicePersistence 
 {
-    public void Save(Invoice invoice) 
-    {
-        // Save to DB
-    }
+     public void Save(Invoice invoice) 
+     {
+          // Save to DB
+     }
 }
 
 public class FilePersistence : IinvoicePersistence 
 {
-    public void Save(Invoice invoice) 
-    {
-        // Save to File
-    }
+     public void Save(Invoice invoice) 
+     {
+          // Save to File
+     }
 }
 ```
 
@@ -903,10 +903,9 @@ Park yeri interface'i oluşturalım.
 ```c#
 public interface IParkingLot 
 {
-	void parkCar();
-	void unparkCar();
-	void getCapacity();
-	
+     void parkCar();
+     void unparkCar();
+     void getCapacity();	
 }
 ```
 
@@ -921,9 +920,8 @@ public interface IFreeParkingLot : IParkingLot
 
 public interface IUcretliParkingLot : IParkingLot
 {
-	double calculateFee(Car car);
-	void doPayment(Car car);
-	
+     double calculateFee(Car car);
+     void doPayment(Car car);	
 }
 ```
 
@@ -974,20 +972,20 @@ Classlar, her zaman **soyut bağımlılıklar** ile bağlanmalıdır.
 ```c#
 public class Email
 {
-  	public void SendEmail()
-    {
-      	// send email
-    }
+     public void SendEmail()
+     {
+          // send email
+     }
 }
 ```
 
 ```c#
 public class Sms
 {
-  	public void SendSms()
-    {
-      	// send sms
-    }
+     public void SendSms()
+     {
+          // send sms
+     }
 }
 ```
 
@@ -998,14 +996,14 @@ Bildirim göndermek istediğimizde, 2 sınıfı da çalıştırması için oluş
 ```c#
 public class Notification
 {
-  	private Email email = new Email();
-  	private Sms sms = new Sms();
+     private Email email = new Email();
+     private Sms sms = new Sms();
   
-  	public void Sender()
-    {
-      	email.SendEmail();
-      	sms.SendSms();
-    }
+     public void Sender()
+     {
+          email.SendEmail();
+      	  sms.SendSms();
+     }
 }
 ```
 
@@ -1020,27 +1018,27 @@ Bu çözümü uygulamak için Email ve Sms sınıflarını kapsayacak bir interf
 ```c#
 public interface IMessage
 {
-  	void SendMessage();
+     void SendMessage();
 }
 ```
 
 ```c#
 public class Email : IMessage
 {
-  	public void SendMessage()
-    {
-      	// Email gönder.
-    }
+     public void SendMessage()
+     {
+          // Email gönder.
+     }
 }
 ```
 
 ```c#
 public class Sms : IMessage
 {
-  	public void SendMessage()
-    {
-      	// Sms gönder.
-    }
+     public void SendMessage()
+     {
+          // Sms gönder.
+     }
 }
 ```
 
@@ -1051,20 +1049,20 @@ public class Sms : IMessage
 ```c#
 public class Notification
 {
-  	private List<Message> messages;
+     private List<Message> messages;
   	
-  	public Notification(List<Message> messages)
-    {
-      	this.messages = messages;
-    }
+     public Notification(List<Message> messages)
+     {
+          this.messages = messages;
+     }
   
-  	public void Sender()
-    {
-      	foreach(var message in messages)
-        {
-          	message.SendMessage();
-        }
-    }
+     public void Sender()
+     {
+          foreach(var message in messages)
+          {
+               message.SendMessage();
+          }
+     }
 }
 ```
 
@@ -1164,19 +1162,18 @@ Bir class’ın singleton tasarım örüntüsüne uygun olması için temelde ü
 ```c#
 public class SingletonExample 
 {
+     private static SingletonExample instance;
 
-    private static SingletonExample instance;
+     private SingletonExample(){}
 
-    private SingletonExample(){}
+     public static SingletonExample getInstance()
+     {
+          if (instance == null)
+          {
+               instance = new SingletonExample();
+          }
 
-    public static SingletonExample getInstance(){
-
-        if (instance == null)
-        {
-            instance = new SingletonExample();
-        }
-
-        return instance;
+          return instance;
     }
 }
 ```
@@ -1304,9 +1301,9 @@ public bool CheckIfPassed(double average)
 ```c#
 public class Rectangle
 {
-  	private int shortEdge;
-  	private int longEdge;
-  //...
+     private int shortEdge;
+     private int longEdge;
+     //...
 }
 ```
 
@@ -1317,19 +1314,19 @@ public class Rectangle
 ```c#
 public class Rectangle
 {
-  	private int _shortEdge;
-  	public int shortEdge
-    {
-      	get
-        {
-          	return _shortEdge;
-        }
-      	set
-        {
-          	if(value > 0) _shortEdge = value;
-          	else throw new ArgumentException();
-        }
-    }
+     private int _shortEdge;
+     public int shortEdge
+     {
+          get
+          {
+               return _shortEdge;
+          }
+      	  set
+          {
+               if(value > 0) _shortEdge = value;
+               else throw new ArgumentException();
+          }
+     }
 }
 ```
 
@@ -1340,7 +1337,7 @@ public class Rectangle
 ```c#
 public class Rectangle
 {
-  	public int ShortEdge { get; set; }
+     public int ShortEdge { get; set; }
 }
 ```
 
@@ -1546,22 +1543,22 @@ Daha okunaklı ve anlaşılır olur, karmaşık kodlar düzene girer. Arkaplanda
 ```c#
 public partial class Person
 {
-  	public int Id { get; set;}
-  	public string FirstName { get; set;}
-  	public string LastName { get; set;}
+     public int Id { get; set;}
+     public string FirstName { get; set;}
+     public string LastName { get; set;}
 }
 
 public partial class Person
 {
-  	public string GetFullName()
-    {
-      	return FirstName + " " + LastName;
-    }
+     public string GetFullName()
+     {
+          return FirstName + " " + LastName;
+     }
   
-  	public string SayHello()
-    {
-      	return "Hello, " + FirstName + " " + LastName;
-    }
+     public string SayHello()
+     {
+          return "Hello, " + FirstName + " " + LastName;
+     }
 } 
 ```
 
@@ -1632,45 +1629,45 @@ Kişi sınıfından Personel türetelim, Personel sınıfından da Mühendis tü
 ```c#
 public class Person
 {
-  	public virtual void WhoAmI()
-    {
-      	Console.Write("I am a Person");
-    }
+     public virtual void WhoAmI()
+     {
+          Console.Write("I am a Person");
+     }
 }
 
 public class Employee : Person
 {
-  	public override void WhoAmI()
-    {
-      	Console.Write("I am an Employee");
-    }
+     public override void WhoAmI()
+     {
+          Console.Write("I am an Employee");
+     }
 }
 
 public class Engineer : Employee
 {
-  	public override void WhoAmI()
-    {
-      	Console.Write("I am an Engineer");
-    }
+     public override void WhoAmI()
+     {
+          Console.Write("I am an Engineer");
+     }
 }
 
 public class Main()
 {
-  	public static void Main(string[] args)
-		{
-  			Person human1   = new Person();
-  			Employee human2 = new Employee();
-  			Engineer human3 = new Engineer();
+     public static void Main(string[] args)
+     {
+          Person human1   = new Person();
+          Employee human2 = new Employee();
+          Engineer human3 = new Engineer();
   	
-      	TellMeWhoIAm(human1); // I am a Person
-        TellMeWhoIAm(human2); // I am an Employee
-        TellMeWhoIAm(human3); // I am an Engineer
-		}
+      	  TellMeWhoIAm(human1); // I am a Person
+          TellMeWhoIAm(human2); // I am an Employee
+          TellMeWhoIAm(human3); // I am an Engineer
+     }
   
-  	public static void TellMeWhoIAm(Person human) // önemli
-    {
-      	human.WhoAmI();
-    }
+     public static void TellMeWhoIAm(Person human) // önemli
+     {
+          human.WhoAmI();
+     }
 }
 
 ```
@@ -1725,26 +1722,28 @@ Aslında bu da demektir ki, 1 tane catch bloğu çalışır. İlk catch bloğund
 
 ```c#
 static void Main()
-    {
-        int[] number = { 8, 17, 24, 5, 25 };
-        int[] divisor = { 2, 0, 0, 5 };
+{
+     int[] number = { 8, 17, 24, 5, 25 };
+     int[] divisor = { 2, 0, 0, 5 };
   
-        for (int j = 0; j < number.Length; j++)
-        {
-          	try 
-            {
-                Console.WriteLine("Number: " + number[j]);
-                Console.WriteLine("Divisor: " + divisor[j]);
-                Console.WriteLine("Quotient: " + number[j] / divisor[j]);
-            }
-            catch (DivideByZeroException) {  
-                Console.WriteLine("Not possible to Divide by zero");
-            }
-            catch (IndexOutOfRangeException) {
-                Console.WriteLine("Index is Out of Range");
-            }
-        }          
-    }
+     for (int j = 0; j < number.Length; j++)
+     {
+          try 
+          {
+               Console.WriteLine("Number: " + number[j]);
+               Console.WriteLine("Divisor: " + divisor[j]);
+               Console.WriteLine("Quotient: " + number[j] / divisor[j]);
+          }
+          catch (DivideByZeroException)
+          {  
+               Console.WriteLine("Not possible to Divide by zero");
+          }
+          catch (IndexOutOfRangeException)
+          {
+               Console.WriteLine("Index is Out of Range");
+          }
+     }          
+}
 
 // output
 Number: 8
@@ -1800,7 +1799,7 @@ Index is Out of Range
 ```c#
 class Customer
 {
-  // default olarak bulunan access modifier INTERNAL'dır.
+     // default olarak bulunan access modifier INTERNAL'dır.
 }
 
 //NOT: Bir yapının başında access modifier yazılmazsa, o yapı "alabileceği en düşük seviyedeki" belirteci alır default olarak.
@@ -1939,18 +1938,18 @@ Bundan dolayı, dependency injection kavramı devreye giriyor.
 
 
 ```c#
-				[Fact]
-        public void Add_SimpleValuesShouldCalculate_1()
-        {
-            // Arrange
-            double expected = 5;
+[Fact]
+public void Add_SimpleValuesShouldCalculate_1()
+{
+     // Arrange
+     double expected = 5;
 
-            // Act
-            double actual = Calculator.Add(2, 3);
+     // Act
+     double actual = Calculator.Add(2, 3);
 
-            // Assert
-            Assert.Equal(expected, actual);
-        }
+     // Assert
+     Assert.Equal(expected, actual);
+}
 ```
 
 
@@ -1966,13 +1965,13 @@ XUNit kullandım!!!!!
 [InlineData(0,0,0)]
 public void Add_SimpleValuesShouldCalculate(double number1, double number2, double expected)
 {
-       // Arrange
+     // Arrange
 
-       // Act
-       double actual = Calculator.Add(number1, number2);
+     // Act
+     double actual = Calculator.Add(number1, number2);
 
-       // Assert
-       Assert.Equal(expected, actual);
+     // Assert
+     Assert.Equal(expected, actual);
 }
 ```
 
@@ -2033,14 +2032,11 @@ TDD'de mutlaka ve mutlaka test, koddan önce yazılmalıdır.
 ```sql
 SELECT * FROM Customers
 
-
 UPDATE Customers
 SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
 WHERE CustomerID = 1;
 
-
 DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
-
 
 INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
 VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
