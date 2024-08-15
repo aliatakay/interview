@@ -1348,7 +1348,7 @@ public class Rectangle
 
 ---
 
-### Boxing ve Unboxing nedir?
+### Boxing ve Unboxing nedir?
 
 Boxing ve Unboxing, tip dönüşümü için kullanılır.
 
