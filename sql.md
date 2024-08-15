@@ -21,11 +21,14 @@
 
 ```sql
 SELECT * FROM Customers
-
+```
+```sql
 UPDATE Customers SET Name = 'Ali' WHERE Id = 1;
-
+```
+```sql
 DELETE FROM Customers WHERE Id = 1;
-
+```
+```sql
 INSERT INTO Customers (Id, Name, City) VALUES (1, 'Ali', 'Istanbul');
 ```
 
