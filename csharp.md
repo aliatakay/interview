@@ -1,8 +1,27 @@
-# C# Soruları
+<h1>C# Soruları</h1>
+<h2>Class Nedir?</h2>
+<p>Class, object (nesne) üretmek için yazılan bir şablondur.</p>
 
+```c#
+public class Car
+{
+     public string Name { get; set; }
+     public string Color { get; set; }
+}
+```
 
+<h2>Object Nedir?</h2>
+<p>Object, class kullanılarak oluşturulur.</p>
 
-### Object nedir?
+```c#
+static void Main()
+{
+     Car car = new Car();
+
+     car.Name = "Honda";
+     car.Color = "Blue";
+}
+```
 
 ---
 
