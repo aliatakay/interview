@@ -3,10 +3,10 @@
 <p>Class, object (nesne) üretmek için yazılan bir şablondur.</p>
 
 ```c#
-public class Car
+public class Person
 {
      public string Name { get; set; }
-     public string Color { get; set; }
+     public string City { get; set; }
 }
 ```
 
@@ -14,46 +14,38 @@ public class Car
 <p>Object, class kullanılarak oluşturulur.</p>
 
 ```c#
-static void Main()
-{
-     Car car = new Car();
+var person = new Person();
 
-     car.Name = "Honda";
-     car.Color = "Blue";
-}
+person.Name = "Ali";
+person.City = "Ankara";
 ```
 
----
-
-### Local Variable - Field - Property - Auto Property
-
-**Local Variable**: Bir metot ya da blok içinde tanımlanan değişkenlerdir. Bu değişkenler sadece bulunduğu blok içinde var olur. Bu local değişkenlere, bulunduğu blok haricinde hiçbir yerden **erişilemez**. Bu yüzden hiçbir access modifier almaz.
+<h2>Local Variable</h2>
+<p>Bir metot veya blok içinde tanımlanan değişkenlerdir.</p>
+<p>Bu değişkenler sadece bulunduğu blok içinde var olur.</p>
+<p>Bu local değişkenlere, bulunduğu blok haricinde hiçbir yerden erişilemez.</p> 
+<p>Bu yüzden değişkenin başında hiçbir access modifier tanımlanmaz.</p>
 
 ```c#
-
-public bool CheckIfPassed(double average)
+public int IsTeenager(int age)
 {
-     int passingScore = 50; //bu değişkene sadece bu metot içinde erişilir.
-     if(average >= passingScore) return true;
-     return false;
+     var teenage = 18; //Bu değişkene yalnızca bulunduğu metot içinde erişilir.
+     return age > teenage;
 }
-
 ```
 
-
-
-**Field**: Bir class içinde, herhangi bir tipte, doğrudan tanımlanan değişkenlere denir. Access modifier kullanılabilir. Fakat genelde hep private olarak kullanılır. Çünkü bu değişkene dışarıdan doğrudan erişilmesini istemeyiz. Erişimi sağlamak için property'ler kullanırız.
+<h2>Field</h2>
+<p>Bir class içinde, herhangi bir tipte, doğrudan tanımlanan değişkenlere denir.</p>
+<p>Access modifier kullanılabilir. Fakat genelde hep private olarak kullanılır.</p>
+<p>Çünkü bu değişkene dışarıdan doğrudan erişilmesini istemeyiz. Erişimi sağlamak için property'ler kullanırız.</p>
 
 ```c#
-public class Rectangle
+public class Person
 {
-     private int shortEdge;
-     private int longEdge;
-     //...
+     private string identity;
+     private string nationality;
 }
 ```
-
-
 
 **Property**: Private bir field'ın; read, write, compute işlemlerini yapmayı sağlayan yapıdır. Property'lerin kendisi değer tutmazlar. Get ve set metotları ile ramdeki bir veriyi getirir. Property sayesinde, private olan field'ı nasıl set edeceğimizi ve nasıl get edeceğimizi belirlemiş oluruz. Örneğin shortEdge değeri 0'dan küçük olamaz.
 
