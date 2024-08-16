@@ -27,7 +27,7 @@ person.City = "Ankara";
 <p>Bu yüzden değişkenin başında hiçbir access modifier tanımlanmaz.</p>
 
 ```c#
-public int IsTeenager(int age)
+public bool IsTeenager(int age)
 {
      var teenage = 18; //Bu değişkene yalnızca bulunduğu metot içinde erişilir.
      return age > teenage;
