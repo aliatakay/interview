@@ -47,39 +47,37 @@ public class Person
 }
 ```
 
-**Property**: Private bir field'ın; read, write, compute işlemlerini yapmayı sağlayan yapıdır. Property'lerin kendisi değer tutmazlar. Get ve set metotları ile ramdeki bir veriyi getirir. Property sayesinde, private olan field'ı nasıl set edeceğimizi ve nasıl get edeceğimizi belirlemiş oluruz. Örneğin shortEdge değeri 0'dan küçük olamaz.
+<h2>Property</h2>
+<p>Private bir field'ın; read, write, compute işlemlerini yapmayı sağlayan yapıdır.</p>
+<p>Property'lerin kendisi değer tutmazlar. Get ve set metotları ile ramdeki bir veriyi getirir.</p>
+<p>Property sayesinde, private olan field'ı nasıl set edeceğimizi ve nasıl get edeceğimizi belirlemiş oluruz. Örneğin shortEdge değeri 0'dan küçük olamaz.</p>
 
 ```c#
-public class Rectangle
+public class Square
 {
-     private int _shortEdge;
+     private int edge;
+
      public int shortEdge
      {
-          get
-          {
-               return _shortEdge;
-          }
+          get { return edge; }
       	  set
           {
-               if(value > 0) _shortEdge = value;
+               if (value > 0) edge = value;
                else throw new ArgumentException();
           }
      }
 }
 ```
 
-
-
-**Auto Property**: Property ve Field ikilisini kısa şekilde yazmanın bir yöntemidir.
+<h2>Auto Property</h2>
+<p>Property ve Field ikilisini kısa şekilde yazmanın bir yöntemidir.</p>
 
 ```c#
-public class Rectangle
+public class Square
 {
-     public int ShortEdge { get; set; }
+     public int Edge { get; set; }
 }
 ```
-
-
 
 ---
 
