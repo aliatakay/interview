@@ -49,15 +49,15 @@ public class Person
 
 <h2>Property</h2>
 <p>Private bir field'ın; read, write, compute işlemlerini yapmayı sağlayan yapıdır.</p>
-<p>Property'lerin kendisi değer tutmazlar. Get ve set metotları ile ramdeki bir veriyi getirir.</p>
-<p>Property sayesinde, private olan field'ı nasıl set edeceğimizi ve nasıl get edeceğimizi belirlemiş oluruz. Örneğin shortEdge değeri 0'dan küçük olamaz.</p>
+<p>Property'nin kendisi değer tutmaz. Get ve set metotları ile ramdeki bir veriyi getirir.</p>
+<p>Property sayesinde, private olan field'ı nasıl set edeceğimizi ve nasıl get edeceğimizi belirlemiş oluruz. Örneğin edge değeri 0'dan küçük olamaz.</p>
 
 ```c#
 public class Square
 {
      private int edge;
 
-     public int shortEdge
+     public int Edge
      {
           get { return edge; }
       	  set
