@@ -81,25 +81,21 @@ public class Square
 
 ---
 
-### Boxing ve Unboxing nedir?
-
-Boxing ve Unboxing, tip dönüşümü için kullanılır.
-
-Boxing:       Value Type -> Reference Type
+<h2>Boxing</h2>
+<p>Value type olan bir değerin, reference type'a dönüştürülmesidir.</p>
 
 ```c#
 int number = 100;
-Object obj = number;
+object obj = number;
 ```
 
-Unboxing:   Reference Type -> Value Type
+<h2>Unboxing</h2>
+<p>Reference type olan bir değerin, value type'a dönüştürülmesidir.</p>
 
 ```c#
-Object obj = 100;
+object obj = 100;
 int number = (int)obj;
 ```
-
-
 
 ---
 
