@@ -22,7 +22,7 @@ person.City = "Ankara";
 
 <h2>Local Variable</h2>
 <p>Bir metot veya blok içinde tanımlanan değişkenlerdir.</p>
-<p>Bu değişkenler sadece bulunduğu blok içinde var olur.</p>
+<p>Bu değişkenler sadece bulunduğu blok içerisinde var olur.</p>
 <p>Bu local değişkenlere, bulunduğu blok haricinde hiçbir yerden erişilemez.</p> 
 <p>Bu yüzden değişkenin başında hiçbir access modifier tanımlanmaz.</p>
 
@@ -35,9 +35,9 @@ public bool IsTeenager(int age)
 ```
 
 <h2>Field</h2>
-<p>Bir class içinde, herhangi bir tipte, doğrudan tanımlanan değişkenlere denir.</p>
-<p>Access modifier kullanılabilir. Fakat genelde hep private olarak kullanılır.</p>
-<p>Çünkü bu değişkene dışarıdan doğrudan erişilmesini istemeyiz. Erişimi sağlamak için property'ler kullanırız.</p>
+<p>Bir class içinde, herhangi bir tipte, doğrudan tanımlanan değişkenlerdir.</p>
+<p>Access modifier kullanılabilir. Fakat genelde private olarak kullanılır.</p>
+<p>Çünkü bu değişkene dışarıdan doğrudan erişilmesi istenmez. Erişimi sağlamak için property'ler kullanılır.</p>
 
 ```c#
 public class Person
@@ -48,9 +48,9 @@ public class Person
 ```
 
 <h2>Property</h2>
-<p>Private bir field'ın; read, write, compute işlemlerini yapmayı sağlayan yapıdır.</p>
-<p>Property'nin kendisi değer tutmaz. Get ve set metotları ile ramdeki bir veriyi getirir.</p>
-<p>Property sayesinde, private olan field'ı nasıl set edeceğimizi ve nasıl get edeceğimizi belirlemiş oluruz. Örneğin edge değeri 0'dan küçük olamaz.</p>
+<p>Private bir field'ın; read, write, compute işlemlerini yapmayı sağlar.</p>
+<p>Property'nin kendisi değer tutmaz. Get ve set metotları ile ram'deki bir veriyi getirir.</p>
+<p>Property sayesinde, private olan field'ı nasıl set edeceğimizi ve nasıl get edeceğimizi belirleriz. Örneğin edge değeri 0'dan küçük olamaz.</p>
 
 ```c#
 public class Square
@@ -60,11 +60,7 @@ public class Square
      public int Edge
      {
           get { return edge; }
-      	  set
-          {
-               if (value > 0) edge = value;
-               else throw new ArgumentException();
-          }
+      	  set { edge = value > 0 ? value : 0; }
      }
 }
 ```
@@ -123,8 +119,8 @@ int number = (int)obj;
 		<td>Class abstract olabilir.</td>
 	</tr>
 	<tr>
-		<td>Struct, Nesne türetirken new keyword kullanılmaz.</td>
-		<td>Class, Nesne türetirken new keyword kullanılır.</td>
+		<td>Struct, nesne türetirken new keyword kullanmaz.</td>
+		<td>Class, nesne türetirken new keyword kullanır.</td>
 	</tr>
 	<tr>
 		<td>Struct, default constructor oluşturulamaz.</td>
@@ -194,7 +190,7 @@ Interface ise metotların body'sini barındırmaz. Sadece imzalarını tutabilir
 
 Enum, değer tiptir.
 
-Değer tip olduğu için, Stack kısmında tutulur.
+Değer tip olduğu için, memory'nin stack kısmında tutulur.
 
 Bir rakam listesine karşılık gelen, sabit değerler listesidir.
 
@@ -206,17 +202,13 @@ enum Day {Sat, Sun, Mon, Tue, Wed, Thu, Fri};
 
 ### Continue ve Break statement farkı nedir?
 
-Break komutu çalıştığı anda, o anki döngü tamamen sonlandırılır.
+Break komutu çalıştığında, döngü tamamen sonlandırılır.
 
-Continue komutu çalıştığı anda, o anki 1 iterasyon atlanır. Döngü diğer iterasyondan devam eder.
+Continue komutu çalıştığında, döngünün o anki 1 iterasyonu atlanır. Döngü diğer iterasyondan devam eder.
 
 ---
 
 ### Const ve Readonly farkı nedir?
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-runtime ve compile time farkı var bu konuda. buna dikkat et.
 
 ---
 
@@ -224,43 +216,44 @@ runtime ve compile time farkı var bu konuda. buna dikkat et.
 
 ---
 
-### Accessors açıklayınız.
+### Accessors (Erişim Belirleyiciler) nedir?
 
 ---
 
-### String ve StringBuilder farkı nedir?
+### String ve String Builder farkı nedir?
 
-String bir değişkene yeni bir değer atanacağı zaman, memory'de yeni bir String instance oluşturulur.
-
-Bu da bellekte performans kaybına yol açar.
-
-System namespace'inden gelir.
-
-
-
-StringBuilder kullanırken bir tane instance üretiriz.
-
-Belli metotlar kullanarak string üzerinde, append veya replace işlemleri yapabiliriz.
-
-System.Text.StringBuilder namespace'inden gelir.
+<table>
+	<tr>
+		<th>String</th>
+		<th>String Builder</th>
+	</tr>
+	<tr>
+		<td>Her set işleminde, memory'de yeni bir instance oluşturulur.</td>
+		<td>Yalnızca bir tane instance oluşturulur.</td>
+	</tr>
+	<tr>
+		<td>Bellekte performans kaybına yol açar.</td>
+		<td>Bellek üzerinde performanslı çalışır.</td>
+	</tr>
+	<tr>
+		<td>System namespace'i altında bulunur.</td>
+		<td>System.Text.StringBuilder namespace'i altında bulunur.</td>
+	</tr>
+</table>
 
 ---
 
 ### Sealed Class nedir?
 
-Sealed anahtar kelimesi, bir class'ın başına yazılarak kullanılır.
+Sealed olarak tanımlanan bir class, inherit edilemez hale gelir.
 
 ```c#
 sealed class Person {}
 ```
 
-Sealed olarak tanımlanan bir class, inherit edilemez hale gelir.
-
 ---
 
 ### Partial Class nedir?
-
-
 
 Aynı isimdeki bir class'ı partial anahtar kelimesini kullanarak birden çok parçaya böleriz.
 
