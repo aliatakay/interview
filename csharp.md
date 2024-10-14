@@ -146,10 +146,9 @@ Mesela **Mercedes is a Car** diyebiliriz. Car bir abstract class'tır.
 
 Bir class sadece 1 tane abstract class'ı inherit alabilir.
 
-Abstract class'lar new ile OLUŞTURAMAZLAR.
+Abstract class'lar new ile OLUŞTURULAMAZLAR.
 
 Zaten mantık olarak bunun olması anlamsızdır, çünkü içinde gövdesi olmayan metot imzaları barındırabilir.
-
 
 
 - Interface içerisinde yalnıza method tanımları bulunur. İçerisine kod parçacığı yazılmaz.
